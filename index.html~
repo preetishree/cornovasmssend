@@ -4,9 +4,9 @@
     <title>Contact Example</title>
 
     <script src="cordova-2.5.0.js"></script>
-   
+   <script src="SmsSendingPlugin"></script>
     <script type="text/javascript" charset="utf-8">
-var smsSendingPlugin = cordova.require('cordova/plugin/smssendingplugin');
+
     // Wait for Cordova to load
     //
     document.addEventListener("deviceready", onDeviceReady, false);
@@ -15,20 +15,11 @@ var smsSendingPlugin = cordova.require('cordova/plugin/smssendingplugin');
     //
     function onDeviceReady() {
       alert(5);
-   smsSendingPlugin.isSupported ((function(supported) {
-    if(supported) 
-      alert("SMS supported !");
-    else
-      alert("SMS not supported");
-  }), function() {
-    alert("Error while checking the SMS support");
-  });
-  
-  smsSendingPlugin.send ("7735934422", "Hello World !", function() {
-    alert("Message sent :-)");
-  }, function() {
-    alert("Message not sent :s");
-  });
+   window.plugins.SMSPlugin.send("7735734424","Jenny! Jenny!",function () { 
+       alert('Message sent successfully');  
+    },
+    function (e) {
+        alert('Message Failed:' + e);
     });
         
     }

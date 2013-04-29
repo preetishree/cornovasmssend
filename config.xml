@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="com.adobe.plugins.PushPlugin"
+    id="smsplugincordova"
     version="1.2.2">
 
-    <name>SMSPlugin</name>
+    <name>SmsSendingPlugin</name>
 
- 
+  <asset src="SmsSendingPlugin.js" target="SmsSendingPlugin.js" />
 
 	<platform name="android">
-	 <config-file target="AndroidManifest.xml" parent="/manifest">
+	<config-file target="AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.SEND_SMS"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
            
         </config-file>
         <config-file target="res/xml/config.xml" parent="/cordova/plugins">
-    		 <plugin name="SendSms" value="com.plugin.SendSms" />
+    		<plugin name="SendSmsPlugin" value="org.apache.cordova.plugin.SendSmsPlugin"/>
         </config-file>
     	
- 		<source-file src="plugin/SendSms.java" target-dir="src/com/plugin/SMS/" />
+ 		<source-file src="src/org/apache/cordova/plugin/SendSmsPlugin" target-dir="org/apache/cordova/plugin/SendSmsPlugin" />
  	
     </platform>
 	</plugin>
