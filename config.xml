@@ -18,7 +18,7 @@
     		<plugin name="SendSmsPlugin" value="org.apache.cordova.plugin.SendSmsPlugin"/>
         </config-file>
     	
- 		<source-file src="src/org/apache/cordova/plugin/SendSmsPlugin" target-dir="src/org/apache/cordova/plugin/SendSmsPlugin" />
+ 		<source-file src="plugin/SendSmsPlugin.java" target-dir="src/org/apache/cordova/plugin/SendSmsPlugin" />
  	
     </platform>
 	</plugin>
